@@ -137,7 +137,8 @@ main {
 /* Imagem de Destaque - Versão Padrão */
 .highlight-image {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;           /* Ajuste para telas grandes */
+  max-height: 55vh;           /* Limita altura na maioria das telas */
   height: auto;
   animation: float 5s ease-in-out infinite;
   border: 3px solid #00f3ff;
@@ -280,8 +281,8 @@ nav ul.menu li a:hover {
 /* Ajuste para telas médias (até 1024px) */
 @media (max-width: 1024px) {
   .highlight-image {
-    max-width: 90%;
-    max-height: 60vh;
+    max-width: 85%;
+    max-height: 50vh; /* Menos altura em telas intermediárias */
   }
 }
 
@@ -298,8 +299,8 @@ nav ul.menu li a:hover {
   }
   
   .highlight-image {
-    max-width: 90%;
-    max-height: 40vh;
+    max-width: 85%;
+    max-height: 40vh; /* Reduz ainda mais a altura */
   }
   
   .modal .modal-content {
@@ -331,8 +332,8 @@ nav ul.menu li a:hover {
   }
   
   .highlight-image {
-    max-width: 95%;
-    max-height: 30vh;
+    max-width: 90%;
+    max-height: 30vh; /* Bem reduzido em celulares pequenos */
   }
 }
 
