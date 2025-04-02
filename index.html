@@ -134,10 +134,12 @@ main {
   max-width: 90%;
 }
 
-/* Imagem de Destaque - Versão Padrão (para telas grandes) */
+/* Imagem de Destaque - Configuração Base (para desktop) */
 .highlight-image {
   width: 100%;
-  max-width: 1200px; /* Aumentado para ficar maior em desktops */
+  /* Em desktops, queremos que a imagem fique bem presente.
+     Removemos limitações rígidas de altura para aproveitar a tela ampla. */
+  max-width: 1200px;
   height: auto;
   animation: float 5s ease-in-out infinite;
   border: 3px solid #00f3ff;
@@ -275,64 +277,37 @@ nav ul.menu li a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE */
+/* Cada breakpoint foi ajustado independentemente para a imagem */
 
-/* Telas até 1024px (tablets grandes, notebooks menores) */
-@media (max-width: 1024px) {
+/* Notebook: telas entre 1024px e 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
   .highlight-image {
-    max-width: 85%;
-    max-height: 55vh; /* Define um limite de altura para não ocupar a tela inteira */
+    width: 100%;
+    max-width: 1000px;
+    /* Mantemos a altura automática para preservar a proporção */
+    height: auto;
   }
 }
 
-/* Telas até 768px (tablets em modo retrato, smartphones grandes) */
-@media (max-width: 768px) {
-  nav ul.menu {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .ticker-item {
-    margin: 0 1rem;
-    font-size: 1rem;
-  }
-  
+/* Tablet: telas entre 768px e 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
   .highlight-image {
-    max-width: 85%;
-    max-height: 40vh;
-  }
-  
-  .modal .modal-content {
-    width: 95%;
-    padding: 1.5rem;
-  }
-}
-
-/* Telas até 480px (smartphones pequenos) */
-@media (max-width: 480px) {
-  .glitch-text {
-    font-size: 2rem;
-  }
-  
-  nav ul.menu li a {
-    font-size: 0.9rem;
-  }
-  
-  .ticker-item {
-    font-size: 0.9rem;
-  }
-  
-  .modal {
-    padding: 1rem;
-  }
-  
-  .modal .modal-content {
-    padding: 1rem;
-  }
-  
-  .highlight-image {
+    width: 100%;
     max-width: 90%;
-    max-height: 30vh; 
+    /* Limita a altura para evitar que a imagem ocupe demais a tela */
+    max-height: 50vh;
+    height: auto;
+  }
+}
+
+/* Smartphone: telas até 767px */
+@media (max-width: 767px) {
+  .highlight-image {
+    width: 100%;
+    max-width: 95%;
+    max-height: 40vh;
+    height: auto;
   }
 }
 
