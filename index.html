@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Tech</title>
+  <meta name="description" content="Technovision 2050 - Explorando tecnologias futuristas e inovações que estão moldando o futuro da humanidade.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global e background futurista */
+body {
+  background: linear-gradient(135deg, #0a0a23, #1e1e3f);
+  overflow-x: hidden;
+  font-family: 'Exo 2', sans-serif;
+  color: #f0f0f0;
+  position: relative;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Cyber Grid */
+.cyber-grid {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(0,243,255,0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,243,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+  mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+  z-index: 0;
+}
+
+/* Cyber Gradient */
+.cyber-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,243,255,0.15) 0%, rgba(10,10,35,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Particle Network */
+.particle-network {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Glitch Container e Animações */
+.glitch-container {
+  position: relative;
+  animation: glitch-skew 4s cubic-bezier(0.25,0.46,0.45,0.94) infinite;
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch-anim 5s infinite;
+  font-size: 3rem;
+  text-align: center;
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  50% { transform: skew(5deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px,2px); }
+  40% { transform: translate(-2px,-2px); }
+  60% { transform: translate(2px,2px); }
+  80% { transform: translate(2px,-2px); }
+  100% { transform: translate(0); }
+}
+
+/* Cyber Ticker */
+.cyber-ticker {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(0,243,255,0.1);
+  border-top: 2px solid #00f3ff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.ticker-content {
+  display: flex;
+  animation: ticker-scroll 40s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  margin: 0 3rem;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #00f3ff;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Destaque da Imagem */
+main {
+  position: relative;
+  z-index: 3;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+.highlight-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  animation: float 5s ease-in-out infinite;
+  border: 3px solid #00f3ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,243,255,0.3);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Layout e Navegação */
+header, nav {
+  position: relative;
+  z-index: 3;
+  padding: 1rem;
+}
+
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav ul.menu li a {
+  text-decoration: none;
+  color: #00f3ff;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul.menu li a:hover {
+  color: #ffffff;
+}
+
+/* Estilo dos Modais com transição via scale e melhor organização */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10,10,35,0.95);
+  color: #fff;
+  display: none;
+  overflow: auto;
+  z-index: 20;
+  border-radius: 10px;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  padding: 2rem;
+}
+
+.modal.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal .modal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(20,20,50,0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,243,255,0.3);
+  position: relative;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #00f3ff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 30;
+}
+
+/* Estilização dos elementos internos do modal */
+/* Título principal centralizado */
+.modal h2 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #00f3ff;
+  padding-bottom: 0.5rem;
+}
+
+/* Subtítulos alinhados à esquerda */
+.modal h3,
+.modal h4 {
+  text-align: left;
+}
+
+.modal h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal h4 {
+  font-family: 'Exo 2', sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.modal p,
+.modal ul,
+.modal article {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modal ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.modal hr {
+  border: none;
+  border-top: 1px solid #00f3ff;
+  margin: 1.5rem 0;
+}
+
+.modal .modal-section {
+  margin-bottom: 1.5rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cyber-grid"></div>
+    <div class="cyber-gradient"></div>
+    <div class="particle-network" id="particle-network"></div>
+    
+    <header>
+      <div class="glitch-container">
+        <h1 class="glitch-text">FUTURE TECH</h1>
+      </div>
+      <div class="cyber-scan"></div>
+    </header>
+    
+    <nav>
+      <ul class="menu">
+        <li><a data-modal="current-tech"><i class="fas fa-microchip"></i> Tecnologia Atual</a></li>
+        <li><a data-modal="emerging-tech"><i class="fas fa-atom"></i> Tecnologias Emergentes</a></li>
+        <li><a data-modal="revolution"><i class="fas fa-industry"></i> 5ª Revolução Industrial</a></li>
+        <li><a data-modal="analysis-tech"><i class="fas fa-chart-line"></i> Análise Tecnológica</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <img class="highlight-image" src="https://i.ibb.co/BHtJshcm/Chat-GPT-Image-1-de-abr-de-2025-23-14-59.png" alt="Destaque Futurista">
+    </main>
+    
+    <div class="cyber-ticker">
+      <div class="ticker-content" style="animation: ticker-scroll 40s linear infinite 0s;">
+        <span class="ticker-item">◢◤ Realidade Aumentada Quântica ◢◤</span>
+        <span class="ticker-item">◢◤ Nanotecnologia Molecular ◢◤</span>
+        <span class="ticker-item">◢◤ Inteligência Artificial Generalizada ◢◤</span>
+        <span class="ticker-item">◢◤ Energia de Fusão Sustentável ◢◤</span>
+        <span class="ticker-item">◢◤ Computação Quântica Avançada ◢◤</span>
+        <span class="ticker-item">◢◤ Redes Neurais Profundas ◢◤</span>
+        <span class="ticker-item">◢◤ Robótica Autônoma ◢◤</span>
+        <span class="ticker-item">◢◤ Biotecnologia de Precisão ◢◤</span>
+        <span class="ticker-item">◢◤ Realidade Virtual Imersiva ◢◤</span>
+        <span class="ticker-item">◢◤ Cidades Inteligentes Conectadas ◢◤</span>
+      </div>
+    </div>
+    
+  
+  <!-- Modais para cada link do menu -->
+  <!-- Modal para Tecnologia Atual -->
+<div class="modal" id="modal-current-tech">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-current-tech')">&times;</button>
+    <h2>Tecnologia Atual</h2>
+    <div class="modal-body" style="overflow-y:auto; max-height:80vh; padding-right:1rem;">
+
+      <section class="modal-section">
+        <h3>🖥️ Computação Pessoal e Mobilidade</h3>
+        <article>
+          <h4>Dispositivos</h4>
+          <ul>
+            <li>Smartphones dobráveis e roláveis (Ex.: Samsung Galaxy Z Fold Series, iPhone Fold)</li>
+            <li>Tablets híbridos (Notebook-tablet) (Ex.: Microsoft Surface, Apple iPad Pro com Magic Keyboard)</li>
+            <li>Computadores pessoais com IA integrada (Ex.: Microsoft Copilot, Apple Vision Pro, Google Gemini)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Sistemas Operacionais</h4>
+          <ul>
+            <li>Windows 11 e Windows 12 (com IA integrada)</li>
+            <li>macOS Sonoma e versões posteriores</li>
+            <li>Android 16</li>
+            <li>iOS 19</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>☁️ Cloud Computing e Armazenamento em Nuvem</h3>
+        <article>
+          <h4>Serviços mais populares</h4>
+          <ul>
+            <li>Google Drive e Google Workspace</li>
+            <li>Microsoft 365 e OneDrive</li>
+            <li>Apple iCloud</li>
+            <li>Dropbox</li>
+            <li>AWS e Azure para aplicações profissionais e pessoais avançadas</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>📱 Comunicação e Redes Sociais</h3>
+        <article>
+          <h4>Plataformas sociais</h4>
+          <ul>
+            <li>TikTok</li>
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+            <li>Telegram</li>
+            <li>Discord</li>
+            <li>X (Twitter renomeado)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Comunicação por Vídeo e IA</h4>
+          <ul>
+            <li>Zoom</li>
+            <li>Google Meet</li>
+            <li>Microsoft Teams</li>
+            <li>Apple FaceTime (com novos recursos de IA)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🌐 Internet e Conectividade</h3>
+        <article>
+          <h4>Conectividade</h4>
+          <ul>
+            <li>Internet 5G consolidada</li>
+            <li>Expansão do 6G em grandes centros urbanos (Ásia e Europa)</li>
+            <li>Fibra óptica residencial generalizada</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Tecnologias relacionadas</h4>
+          <ul>
+            <li>IoT doméstica (casas inteligentes com assistentes virtuais – Alexa, Google Assistant, Siri)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🎧 Entretenimento Digital e Streaming</h3>
+        <article>
+          <h4>Plataformas de Streaming</h4>
+          <ul>
+            <li>Netflix, Prime Video, Disney+, HBO Max, Apple TV+</li>
+            <li>Spotify, Deezer, Apple Music, YouTube Music</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Realidade Virtual (VR) e Aumentada (AR)</h4>
+          <ul>
+            <li>Apple Vision Pro</li>
+            <li>Meta Quest 3</li>
+            <li>PlayStation VR2</li>
+            <li>Óculos inteligentes de AR (Samsung, Xiaomi)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🤖 Inteligência Artificial (IA) e Machine Learning</h3>
+        <article>
+          <h4>Ferramentas de IA Generativa</h4>
+          <ul>
+            <li>ChatGPT (GPT-4 Turbo e GPT-5 em desenvolvimento)</li>
+            <li>Google Gemini</li>
+            <li>Anthropic Claude 3</li>
+            <li>Microsoft Copilot (Windows, Office, Azure)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Assistentes pessoais inteligentes</h4>
+          <ul>
+            <li>Siri avançada (Apple)</li>
+            <li>Google Assistant com Gemini</li>
+            <li>Alexa com IA Generativa (Amazon)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🚗 Mobilidade e Transporte</h3>
+        <article>
+          <h4>Veículos Elétricos (EV)</h4>
+          <ul>
+            <li>Tesla Model 3, Model Y</li>
+            <li>BYD, Volkswagen ID series, Ford Mustang Mach-E, Chevrolet Equinox EV</li>
+            <li>Scooters e bicicletas elétricas (uso generalizado)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Tecnologias emergentes</h4>
+          <ul>
+            <li>Assistência autônoma nível 3 e 4</li>
+            <li>Compartilhamento de veículos elétricos (Uber, Lyft elétricos)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>💳 Pagamentos Digitais e Moedas Digitais</h3>
+        <article>
+          <h4>Pagamentos digitais</h4>
+          <ul>
+            <li>Pix, Apple Pay, Google Pay, Samsung Pay</li>
+            <li>Carteiras digitais (PayPal, Nubank, Mercado Pago, Revolut)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Moedas virtuais e Criptomoedas</h4>
+          <ul>
+            <li>Bitcoin, Ethereum</li>
+            <li>Moedas digitais nacionais (CBDCs): Real Digital, Dólar Digital, Yuan Digital</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>📊 Automação e Produtividade</h3>
+        <article>
+          <h4>Ferramentas de automação</h4>
+          <ul>
+            <li>Zapier, Make (Integromat), Microsoft Power Automate</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Ferramentas com IA</h4>
+          <ul>
+            <li>Notion (com Notion AI), Evernote AI, Microsoft Loop</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🛍️ Comércio Eletrônico e Entregas</h3>
+        <article>
+          <h4>Plataformas de compra online</h4>
+          <ul>
+            <li>Amazon, Shopee, Mercado Livre, AliExpress</li>
+            <li>Plataformas especializadas (iFood, Rappi, Uber Eats, DoorDash)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Automação e robótica</h4>
+          <ul>
+            <li>Entrega por drones e robôs autônomos (inicialmente em grandes cidades)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🩺 Saúde e Bem-Estar</h3>
+        <article>
+          <h4>Telemedicina e aplicativos</h4>
+          <ul>
+            <li>Doctoralia, Teladoc, Minha Saúde (SUS)</li>
+            <li>Smartwatches e pulseiras inteligentes (Apple Watch Series 10, Fitbit, Xiaomi Band, Galaxy Watch)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Wearables avançados</h4>
+          <ul>
+            <li>Monitoramento contínuo de glicose sem agulhas</li>
+            <li>Monitoramento cardíaco (ECG, pressão arterial)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🎮 Jogos Digitais e Plataformas</h3>
+        <article>
+          <h4>Consoles e Plataformas</h4>
+          <ul>
+            <li>PlayStation 5 Slim, Xbox Series X|S, Nintendo Switch 2 (rumores de 2025)</li>
+            <li>Cloud Gaming (Xbox Game Pass Cloud, Nvidia GeForce Now)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🔐 Cibersegurança e Privacidade</h3>
+        <ul>
+          <li>Autenticação multifatorial (MFA) universal</li>
+          <li>Gerenciadores de senhas (Bitwarden, 1Password, NordPass)</li>
+          <li>VPNs (NordVPN, Surfshark, ExpressVPN)</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🔋 Tecnologias de Energia Sustentável</h3>
+        <article>
+          <h4>Energia solar residencial</h4>
+          <ul>
+            <li>Painéis solares de alta eficiência</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Armazenamento de energia</h4>
+          <ul>
+            <li>Baterias residenciais (Tesla Powerwall, sistemas equivalentes da BYD, Sonnen)</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>📈 Tecnologias Emergentes já comuns em 2025</h3>
+        <ul>
+          <li>Inteligência Artificial Generativa</li>
+          <li>Computação Quântica</li>
+          <li>Blockchain com contratos inteligentes</li>
+          <li>Tecnologias 3D (Impressão 3D)</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section class="modal-section">
+        <h3>🚀 Tecnologias Espaciais e Conectividade</h3>
+        <ul>
+          <li>Starlink (internet via satélite)</li>
+          <li>Programas espaciais (SpaceX, Blue Origin, Rocket Lab)</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Modal para Tecnologias Emergentes -->
+<div class="modal" id="modal-emerging-tech">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-emerging-tech')">&times;</button>
+    <h2>Tecnologias Emergentes</h2>
+    <div class="modal-body" style="overflow-y:auto; max-height:80vh; padding-right:1rem;">
+
+      <!-- Introdução -->
+      <section class="modal-section">
+        <h3>🚀 Tecnologias Emergentes em uso inicial em 2025 (com perspectiva de crescimento futuro)</h3>
+      </section>
+      <hr>
+
+      <!-- 1. Computação Avançada -->
+      <section class="modal-section">
+        <h3>1. Computação Avançada</h3>
+        <article>
+          <h4>✅ Computação Quântica</h4>
+          <ul>
+            <li>Computadores quânticos comerciais iniciais (Ex.: IBM Quantum System, Google Quantum AI)</li>
+            <li>Aplicações em química, farmacêutica, finanças e criptografia quântica</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Computação Neuromórfica</h4>
+          <ul>
+            <li>Chips inspirados no cérebro humano, oferecendo eficiência energética extrema e avanços em IA (Ex.: Intel Loihi, IBM TrueNorth)</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 2. Inteligência Artificial e Cognição Avançada -->
+      <section class="modal-section">
+        <h3>2. Inteligência Artificial e Cognição Avançada</h3>
+        <article>
+          <h4>✅ AGI (Inteligência Artificial Geral - Nível Inicial)</h4>
+          <ul>
+            <li>Protótipos capazes de aprendizado e generalização de tarefas múltiplas</li>
+            <li>Implementações controladas em grandes empresas (Google DeepMind, OpenAI GPT-5 Beta)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ IA Quântica</h4>
+          <ul>
+            <li>Integração inicial de IA com computação quântica para problemas complexos</li>
+            <li>Aplicações em medicina personalizada, simulações moleculares e modelos climáticos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Inteligência Artificial Emocional (Emotion AI)</h4>
+          <ul>
+            <li>IA reconhecendo e reagindo a emoções humanas em dispositivos pessoais e veículos autônomos</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 3. Biotecnologia Avançada -->
+      <section class="modal-section">
+        <h3>3. Biotecnologia Avançada</h3>
+        <article>
+          <h4>✅ Edição Genética CRISPR 2.0</h4>
+          <ul>
+            <li>Avanços na precisão e segurança da edição genética humana (edições terapêuticas iniciais)</li>
+            <li>Aplicações para doenças raras e câncer</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Órgãos e Tecidos Sintéticos (Bioimpressão 3D avançada)</h4>
+          <ul>
+            <li>Impressão inicial de tecidos complexos e pequenos órgãos para transplantes em estágio clínico</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Biochips e Biossensores Implantáveis</h4>
+          <ul>
+            <li>Chips implantáveis para monitoramento constante da saúde (nível inicial em testes clínicos)</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 4. Energia e Sustentabilidade Avançada -->
+      <section class="modal-section">
+        <h3>4. Energia e Sustentabilidade Avançada</h3>
+        <article>
+          <h4>✅ Fusão Nuclear Comercial Inicial</h4>
+          <ul>
+            <li>Projetos-piloto bem-sucedidos para fusão nuclear controlada (Ex.: ITER, Commonwealth Fusion Systems, Helion Energy)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Superbaterias e Supercapacitores</h4>
+          <ul>
+            <li>Baterias de estado sólido com alta densidade energética (estágio inicial comercial)</li>
+            <li>Aplicação em veículos elétricos e armazenamento residencial</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Painéis Solares Transparentes e Flexíveis</h4>
+          <ul>
+            <li>Tecnologia solar integrada em vidros e telas, ainda em estágio inicial de adoção</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 5. Realidade Estendida (XR) Avançada -->
+      <section class="modal-section">
+        <h3>5. Realidade Estendida (XR) Avançada</h3>
+        <article>
+          <h4>✅ Metaverso com Interação Imersiva</h4>
+          <ul>
+            <li>Plataformas iniciais em expansão (Meta Horizon Worlds, Apple Vision Pro Ecosystem)</li>
+            <li>Aplicações profissionais, educacionais e sociais em crescimento inicial</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Holografia Interativa</h4>
+          <ul>
+            <li>Hologramas interativos em reuniões virtuais e ensino remoto (estágio inicial de adoção)</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 6. Robótica e Automação -->
+      <section class="modal-section">
+        <h3>6. Robótica e Automação</h3>
+        <article>
+          <h4>✅ Robôs Humanoides</h4>
+          <ul>
+            <li>Robôs com capacidades avançadas de mobilidade e interação social (Ex.: Tesla Optimus, Boston Dynamics Atlas aprimorado)</li>
+            <li>Aplicação inicial no atendimento ao público e logística</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Enxames Robóticos Inteligentes</h4>
+          <ul>
+            <li>Enxames autônomos de drones e robôs em agricultura, construção e monitoramento ambiental</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Robôs Assistentes Pessoais</h4>
+          <ul>
+            <li>Robôs domésticos com IA avançada para suporte a idosos e assistência domiciliar</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 7. Transporte e Mobilidade Avançada -->
+      <section class="modal-section">
+        <h3>7. Transporte e Mobilidade Avançada</h3>
+        <article>
+          <h4>✅ Veículos Totalmente Autônomos (Nível 5)</h4>
+          <ul>
+            <li>Veículos autônomos em operação limitada (ex.: campus e aeroportos)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Táxis Voadores (eVTOLs)</h4>
+          <ul>
+            <li>Drones elétricos com passageiros em fase experimental (Ex.: Volocopter, Joby Aviation, Archer Aviation)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Hyperloop</h4>
+          <ul>
+            <li>Tecnologia de transporte ultrarrápido em testes práticos, especialmente nos Emirados Árabes, China e EUA</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 8. Materiais Avançados -->
+      <section class="modal-section">
+        <h3>8. Materiais Avançados</h3>
+        <article>
+          <h4>✅ Grafeno e Nanotecnologia avançada</h4>
+          <ul>
+            <li>Produtos eletrônicos iniciais e materiais compósitos com base em grafeno</li>
+            <li>Nanomateriais autorregeneráveis e resistentes em fase de testes</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Materiais inteligentes</h4>
+          <ul>
+            <li>Materiais com resposta adaptativa a estímulos ambientais (temperatura, umidade, pressão)</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 9. Blockchain 3.0 e Economia Descentralizada -->
+      <section class="modal-section">
+        <h3>9. Blockchain 3.0 e Economia Descentralizada</h3>
+        <article>
+          <h4>✅ Blockchain escalável e interoperável</h4>
+          <ul>
+            <li>Blockchain avançado com processamento escalável (Ethereum 2.0, Polkadot, Cardano, Avalanche)</li>
+            <li>Aplicação inicial em contratos inteligentes governamentais e empresariais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Economia DAO (Organizações Autônomas Descentralizadas)</h4>
+          <ul>
+            <li>DAOs com governança avançada, testadas em pequenas comunidades, cidades e empresas</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 10. Espaço e Tecnologias Espaciais -->
+      <section class="modal-section">
+        <h3>10. Espaço e Tecnologias Espaciais</h3>
+        <article>
+          <h4>✅ Exploração Lunar e Marciana</h4>
+          <ul>
+            <li>Projetos sustentáveis de colonização inicial na Lua (NASA Artemis, SpaceX Starship)</li>
+            <li>Missões tripuladas para Marte previstas para o fim da década</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Mineração Espacial</h4>
+          <ul>
+            <li>Projetos piloto de extração de recursos em asteroides e na Lua (Asteroid Mining)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Internet Global via Satélite Avançada</h4>
+          <ul>
+            <li>Starlink Gen2 e similares para conexões rápidas em áreas remotas e veículos em movimento</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 11. Interfaces Cérebro-Máquina (BMI) -->
+      <section class="modal-section">
+        <h3>11. Interfaces Cérebro-Máquina (BMI)</h3>
+        <ul>
+          <li><strong>✅ Neuralink e similares:</strong> Implantação inicial de chips cerebrais para aplicações médicas (controle de próteses, restauração sensorial)</li>
+        </ul>
+      </section>
+      <hr>
+
+      <!-- 12. Privacidade e Segurança Avançadas -->
+      <section class="modal-section">
+        <h3>12. Privacidade e Segurança Avançadas</h3>
+        <article>
+          <h4>✅ Criptografia Pós-quântica</h4>
+          <ul>
+            <li>Algoritmos resistentes à computação quântica em implementação em bancos, governos e grandes empresas</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Tecnologia de Privacidade Diferencial</h4>
+          <ul>
+            <li>Uso inicial em grandes empresas de tecnologia (Apple, Google) para proteção avançada de dados pessoais</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 13. Tecnologias Ambientais Avançadas -->
+      <section class="modal-section">
+        <h3>13. Tecnologias Ambientais Avançadas</h3>
+        <article>
+          <h4>✅ Captura direta de carbono</h4>
+          <ul>
+            <li>Plantas de captura e armazenamento de CO₂ atmosférico em escala reduzida (Carbon Engineering, Climeworks)</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Agricultura vertical inteligente</h4>
+          <ul>
+            <li>Produção inicial de alimentos urbanos com IA, IoT e automação agrícola avançada</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 14. Comunicação Avançada -->
+      <section class="modal-section">
+        <h3>14. Comunicação Avançada</h3>
+        <article>
+          <h4>✅ Tecnologia 6G</h4>
+          <ul>
+            <li>Testes experimentais em alguns países, com ampla adoção prevista entre 2028 e 2030</li>
+          </ul>
+        </article>
+        <article>
+          <h4>✅ Comunicação holográfica</h4>
+          <ul>
+            <li>Transmissões iniciais em eventos, conferências e aplicações médicas</li>
+          </ul>
+        </article>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Modal para 5ª Revolução Industrial -->
+<div class="modal" id="modal-revolution">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-revolution')">&times;</button>
+    <h2>5ª Revolução Industrial</h2>
+    <div class="modal-body" style="overflow-y:auto; max-height:80vh; padding-right:1rem;">
+
+      <!-- Introdução -->
+      <section class="modal-section">
+        <h3>🌐 5ª Revolução Industrial (Sociedade 5.0): Conceito e Tecnologias</h3>
+        <p>
+          A Quinta Revolução Industrial é um conceito que propõe a união entre tecnologia avançada, sustentabilidade, ética e humanização. 
+          Enquanto a 4ª Revolução Industrial focou na automação, digitalização e inteligência artificial, a 5ª enfatiza a colaboração profunda entre seres humanos e tecnologias avançadas, visando criar uma sociedade mais inclusiva, sustentável e centrada no bem-estar humano.
+        </p>
+      </section>
+      <hr>
+
+      <!-- 1. Tecnologias Cognitivas e Inteligência Artificial Avançada -->
+      <section class="modal-section">
+        <h3>⚙️ 1. Tecnologias Cognitivas e Inteligência Artificial Avançada</h3>
+        <article>
+          <h4>Inteligência Artificial Geral (AGI - Artificial General Intelligence)</h4>
+          <ul>
+            <li>IA capaz de compreender e realizar tarefas cognitivas iguais ou superiores às humanas em múltiplos domínios simultaneamente</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Inteligência Artificial emocional e ética (Ethical AI e Emotion AI)</h4>
+          <ul>
+            <li>Sistemas de IA com sensibilidade emocional, empatia artificial e modelos éticos embutidos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Ciborgues Cognitivos e Interfaces Cérebro-Máquina (BMI)</h4>
+          <ul>
+            <li>Neurotecnologia de alto nível integrando a cognição humana com redes digitais</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 2. Tecnologias de Sustentabilidade Integrada -->
+      <section class="modal-section">
+        <h3>🌱 2. Tecnologias de Sustentabilidade Integrada</h3>
+        <article>
+          <h4>Energia de fusão nuclear comercial</h4>
+          <ul>
+            <li>Energia limpa e praticamente inesgotável derivada da fusão controlada de núcleos atômicos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Redes de energia inteligentes integradas (Smart Grids Globais)</h4>
+          <ul>
+            <li>Sistemas globais interligados com alta eficiência energética, produção descentralizada e inteligência artificial para otimização contínua</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Captura direta e massiva de carbono (Carbon Capture Global)</h4>
+          <ul>
+            <li>Tecnologias escaláveis para captura eficiente e comercialmente viável de carbono atmosférico</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Economia circular avançada</h4>
+          <ul>
+            <li>Tecnologias de reciclagem absoluta e materiais infinitamente reutilizáveis</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 3. Biotecnologia, Genômica e Medicina Personalizada -->
+      <section class="modal-section">
+        <h3>🧬 3. Biotecnologia, Genômica e Medicina Personalizada</h3>
+        <article>
+          <h4>Edição genética personalizada (CRISPR 3.0)</h4>
+          <ul>
+            <li>Terapias individualizadas avançadas para prevenção e cura total de doenças genéticas e crônicas</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Nanorrobôs médicos (Nanobots)</h4>
+          <ul>
+            <li>Robôs microscópicos capazes de realizar procedimentos médicos, diagnosticar doenças precocemente e reparar tecidos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Medicina regenerativa avançada</h4>
+          <ul>
+            <li>Bioengenharia de órgãos complexos e rejuvenescimento celular amplo</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 4. Robótica Colaborativa Avançada -->
+      <section class="modal-section">
+        <h3>🤖 4. Robótica Colaborativa Avançada</h3>
+        <article>
+          <h4>Robôs humanoides sociais integrados</h4>
+          <ul>
+            <li>Robôs avançados com interação emocional e suporte a humanos, especialmente idosos e pessoas com necessidades especiais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Exoesqueletos cibernéticos (Cyber Exoskeletons)</h4>
+          <ul>
+            <li>Exoesqueletos inteligentes que aprimoram capacidades humanas em trabalho, saúde e mobilidade</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Enxames robóticos (Swarm Robotics)</h4>
+          <ul>
+            <li>Cooperação autônoma de robôs em tarefas complexas, ambientais e sociais</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 5. Espaço e Exploração Espacial Integrada -->
+      <section class="modal-section">
+        <h3>🚀 5. Espaço e Exploração Espacial Integrada</h3>
+        <article>
+          <h4>Colonização Lunar e Marciana sustentável</h4>
+          <ul>
+            <li>Comunidades humanas sustentáveis no espaço, integradas ao ecossistema terrestre</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Mineração espacial sustentável</h4>
+          <ul>
+            <li>Exploração comercial e ética de recursos espaciais para preservação ambiental da Terra</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Internet espacial ultrarrápida global</h4>
+          <ul>
+            <li>Redes globais de comunicação espacial universal (ex.: Starlink Gen2 e além)</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 6. Energia e Materiais Inteligentes -->
+      <section class="modal-section">
+        <h3>💡 6. Energia e Materiais Inteligentes</h3>
+        <article>
+          <h4>Materiais inteligentes auto-adaptativos (Smart Adaptive Materials)</h4>
+          <ul>
+            <li>Materiais que se adaptam dinamicamente às condições ambientais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Grafeno e novos nanomateriais avançados</h4>
+          <ul>
+            <li>Materiais ultra-leves, resistentes e condutores para aplicações universais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Tecnologia de baterias quânticas e supercapacitores avançados</h4>
+          <ul>
+            <li>Armazenamento de energia em escala ilimitada com liberação energética rápida</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 7. Tecnologias Ambientais Avançadas -->
+      <section class="modal-section">
+        <h3>🌍 7. Tecnologias Ambientais Avançadas</h3>
+        <article>
+          <h4>Agricultura inteligente e regenerativa</h4>
+          <ul>
+            <li>Sistemas integrados com robótica, IA, agricultura vertical e sensores ambientais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>OceanTech (Tecnologias avançadas para Oceanos)</h4>
+          <ul>
+            <li>Soluções para regeneração, conservação e exploração sustentável dos oceanos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Geoengenharia Ética (Engenharia Climática)</h4>
+          <ul>
+            <li>Tecnologias seguras para controle climático ético e recuperação ambiental em larga escala</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 8. Realidade Integrada, Metaverso Ético e Realidade Extendida (XR) -->
+      <section class="modal-section">
+        <h3>🧠 8. Realidade Integrada, Metaverso Ético e Realidade Extendida (XR)</h3>
+        <article>
+          <h4>Metaverso Humanizado</h4>
+          <ul>
+            <li>Espaços virtuais integrados à realidade física com interação realista, inclusiva e ética</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Realidade Híbrida Avançada (XR + holografia realista)</h4>
+          <ul>
+            <li>Interações presenciais ampliadas por realidade aumentada e hologramas realistas</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 9. Tecnologias Blockchain e Governança Descentralizada -->
+      <section class="modal-section">
+        <h3>🔗 9. Tecnologias Blockchain e Governança Descentralizada</h3>
+        <article>
+          <h4>Blockchain 4.0 (Blockchain adaptativo)</h4>
+          <ul>
+            <li>Redes blockchain com adaptabilidade dinâmica e contratos auto-evolutivos</li>
+          </ul>
+        </article>
+        <article>
+          <h4>DAOs globais (Organizações Autônomas Descentralizadas Globais)</h4>
+          <ul>
+            <li>Governança global descentralizada para organizações sociais, cidades e países</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 10. Comunicações Avançadas e Computação -->
+      <section class="modal-section">
+        <h3>📡 10. Comunicações Avançadas e Computação</h3>
+        <article>
+          <h4>Comunicações quânticas globais</h4>
+          <ul>
+            <li>Redes de comunicação instantânea e seguras baseadas em computação quântica</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Internet sensorial tátil e imersiva (Internet of Senses)</h4>
+          <ul>
+            <li>Transmissão e reprodução digital de sensações físicas, olfativas, táteis e emocionais</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 11. Mobilidade Inteligente, Sustentável e Universal -->
+      <section class="modal-section">
+        <h3>🚗 11. Mobilidade Inteligente, Sustentável e Universal</h3>
+        <article>
+          <h4>Transporte autônomo multimodal global</h4>
+          <ul>
+            <li>Redes integradas de veículos elétricos e autônomos conectados globalmente</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Hyperloop intercontinental e ultrarrápido</h4>
+          <ul>
+            <li>Transporte terrestre ultraveloz e ecologicamente correto, ligando continentes em minutos ou horas</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 12. Segurança Cibernética Quântica e Privacidade -->
+      <section class="modal-section">
+        <h3>🔐 12. Segurança Cibernética Quântica e Privacidade</h3>
+        <article>
+          <h4>Criptografia quântica inquebrável (Quantum Encryption)</h4>
+          <ul>
+            <li>Segurança digital absoluta utilizando princípios quânticos fundamentais</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Identidades digitais globais protegidas</h4>
+          <ul>
+            <li>Identidades digitais com autenticação biométrica e privacidade reforçada</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- 13. Economia Pós-Escassez e Automação Total -->
+      <section class="modal-section">
+        <h3>📊 13. Economia Pós-Escassez e Automação Total</h3>
+        <article>
+          <h4>Economia baseada em IA e automação universal</h4>
+          <ul>
+            <li>Produção e distribuição automatizada, liberando a humanidade para a criatividade e inovação</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Renda Básica Universal (UBI) baseada em IA</h4>
+          <ul>
+            <li>Distribuição inteligente de recursos em uma economia abundante e sustentável</li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+
+      <!-- Conclusão -->
+      <section class="modal-section">
+        <h3>🔷 Conclusão e Perspectiva</h3>
+        <p>
+          A 5ª Revolução Industrial (Sociedade 5.0) não visa apenas avanços tecnológicos, mas busca um equilíbrio sustentável entre tecnologia, ética e bem-estar humano. 
+          Essa integração profunda e humanizada das tecnologias descritas pretende resolver desafios sociais, ambientais e econômicos, criando um futuro próspero, sustentável e verdadeiramente centrado nas necessidades humanas e ambientais.
+          Assim, projeta-se como um período de convergência plena entre seres humanos, tecnologias avançadas, ética, responsabilidade ambiental e prosperidade global compartilhada.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Análise Tecnológica -->
+<div class="modal" id="modal-analysis-tech">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-analysis-tech')">&times;</button>
+    <h2>📌 Análise do Cenário Atual (2025) e Caminhos para a 5ª Revolução Industrial</h2>
+    <p>Atualmente, em 2025, estamos posicionados em um momento tecnológico singular, marcado pela transição acelerada entre a Quarta Revolução Industrial (digitalização, automação e inteligência artificial inicial) e o início do que chamamos de Quinta Revolução Industrial, ou Sociedade 5.0, que enfatiza a integração profunda entre tecnologias avançadas, ética e sustentabilidade centrada no ser humano.</p>
+    <hr>
+    <h3>🖥️ Estado Atual e Perspectiva Próxima</h3>
+    <h4>✅ Computação Pessoal e Inteligência Artificial</h4>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>A IA generativa (ChatGPT, Gemini, Copilot) está amplamente disseminada.</li>
+      <li>IA pessoal e assistentes virtuais já são utilizados regularmente (Siri, Alexa, Google Assistant).</li>
+      <li>Computação pessoal integrada com IA já começou, mas ainda é focada em tarefas pontuais.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos evoluir da IA atual para sistemas com empatia emocional, ética integrada e compreensão mais profunda da cognição humana (Inteligência Artificial Geral – AGI). Precisaremos de mais pesquisas, amadurecimento ético e avanços substanciais em neurotecnologia para uma verdadeira integração homem-máquina.</p>
+    <hr>
+    <h3>☁️ Cloud Computing e IoT (Internet das Coisas)</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Cloud computing é dominante (AWS, Azure, Google Cloud).</li>
+      <li>Casas inteligentes já começam a ser amplamente adotadas com IoT básico (smart speakers, iluminação inteligente, monitoramento residencial).</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos evoluir para uma rede global inteligente (smart grids), onde tudo (cidades, energia, saúde) estará interconectado. Isso exige uma conectividade ainda mais robusta (6G, comunicação quântica) e uma governança ética avançada da informação.</p>
+    <hr>
+    <h3>🌱 Sustentabilidade e Tecnologias Ambientais</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Energias renováveis já fazem parte significativa da matriz energética global (solar e eólica).</li>
+      <li>Primeiras plantas de captura de carbono já estão ativas, porém limitadas.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos avançar rapidamente na comercialização da fusão nuclear, captura direta massiva de carbono, agricultura vertical inteligente e economia circular real, permitindo que essas tecnologias sejam parte natural e viável do nosso cotidiano.</p>
+    <hr>
+    <h3>🤖 Robótica e Automação</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Robôs autônomos são realidade em logística, indústria, e até assistência limitada a idosos.</li>
+      <li>Veículos autônomos ainda são restritos em termos de segurança e infraestrutura.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Necessitaremos de robôs sociais inteligentes com empatia real, robôs pessoais altamente integrados ao cotidiano doméstico, além de veículos totalmente autônomos integrados em cidades inteligentes. Essa etapa demandará uma profunda evolução tecnológica, ética e regulatória.</p>
+    <hr>
+    <h3>🧬 Biotecnologia e Medicina Avançada</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Terapias genéticas com CRISPR já são aplicadas pontualmente.</li>
+      <li>Telemedicina, wearables avançados e bioimpressão 3D começam a se popularizar.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos evoluir para tratamentos genéticos personalizados e seguros em larga escala, nanorrobôs médicos em operação e medicina regenerativa avançada. Além disso, ética médica e regulamentação precisarão evoluir junto com a tecnologia.</p>
+    <hr>
+    <h3>🚀 Espaço e Tecnologia Espacial</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Internet global por satélite (Starlink) já conecta áreas remotas.</li>
+      <li>Programas de exploração espacial humana voltam à Lua e miram Marte em breve.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos estabelecer colonizações sustentáveis no espaço, utilizar recursos espaciais com ética e desenvolver infraestrutura espacial segura, que impactará significativamente a vida terrestre através da integração de recursos e conhecimento.</p>
+    <hr>
+    <h3>🔗 Blockchain e Economia Descentralizada</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Blockchain já é amplamente adotado em finanças, cartórios e logística.</li>
+      <li>Criptomoedas e CBDCs começam a se integrar à economia real.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos evoluir para Blockchains escaláveis e adaptáveis, Organizações Autônomas Descentralizadas globais (DAOs), permitindo governança digital, ética e mais democrática. Isso requer amadurecimento tecnológico, social e legal significativo.</p>
+    <hr>
+    <h3>🧠 Realidade Aumentada, Virtual e Metaverso</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>VR e AR estão ganhando força com Meta Quest e Apple Vision Pro, mas uso cotidiano ainda é limitado.</li>
+      <li>O metaverso é explorado, mas não plenamente adotado pela sociedade.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos criar metaversos éticos, realistas e universalmente acessíveis, integrados totalmente ao cotidiano social e profissional, combinando realidade aumentada e holografia realista.</p>
+    <hr>
+    <h3>🛡️ Privacidade, Segurança e Ética</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Segurança digital melhorou com criptografia avançada e autenticação multifatorial.</li>
+      <li>Privacidade continua sendo um desafio significativo.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Necessitamos de criptografia quântica (pós-quântica), identidades digitais seguras e privacidade diferencial generalizada, garantindo privacidade total em um mundo ultraconectado e monitorado.</p>
+    <hr>
+    <h3>💡 Materiais Avançados e Nanotecnologia</h3>
+    <p><strong>Estado atual (2025):</strong></p>
+    <ul>
+      <li>Grafeno e materiais inteligentes já têm aplicações práticas limitadas.</li>
+      <li>Impressão 3D avançada está se difundindo lentamente.</li>
+    </ul>
+    <p><strong>Quanto falta para atingir a 5ª Revolução Industrial:</strong></p>
+    <p>Precisamos popularizar materiais inteligentes adaptativos e nanotecnologia avançada para aplicações diárias em saúde, eletrônicos e infraestrutura.</p>
+    <hr>
+    <h3>🌎 Desafios e Evolução Necessária para a 5ª Revolução Industrial</h3>
+    <p>Para atingirmos plenamente o conceito da 5ª Revolução Industrial, teremos que superar vários desafios principais:</p>
+    <ol>
+      <li><strong>Evolução ética e cultural:</strong>
+        <ul>
+          <li>Será fundamental amadurecer globalmente nossa relação ética com a tecnologia.</li>
+        </ul>
+      </li>
+      <li><strong>Infraestrutura e conectividade:</strong>
+        <ul>
+          <li>É urgente desenvolver infraestrutura avançada global (6G, redes quânticas).</li>
+        </ul>
+      </li>
+      <li><strong>Regulamentação e governança digital:</strong>
+        <ul>
+          <li>Políticas eficazes para segurança, ética e privacidade precisam ser elaboradas.</li>
+        </ul>
+      </li>
+      <li><strong>Acesso e inclusão tecnológica:</strong>
+        <ul>
+          <li>Assegurar que todos os indivíduos e regiões do mundo participem dos benefícios dessas tecnologias.</li>
+        </ul>
+      </li>
+      <li><strong>Avanços tecnológicos específicos:</strong>
+        <ul>
+          <li>Consolidar avanços em fusão nuclear, AGI, CRISPR avançado, robótica social e sustentabilidade total.</li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+    <h2>📌 Conclusão</h2>
+    <p>Estamos na fase inicial da transição para a 5ª Revolução Industrial. Embora já existam tecnologias fundamentais presentes, o avanço necessário é significativo, principalmente em integração ética, acessibilidade global, regulamentação madura e sustentabilidade integrada.</p>
+    <p>O futuro próximo exigirá esforços significativos em inovação tecnológica, consciência social, ética profunda e responsabilidade ambiental. Ao alcançarmos esses objetivos, poderemos, enfim, experimentar plenamente uma sociedade tecnologicamente avançada, sustentável e profundamente humanizada, alinhada com o ideal da 5ª Revolução Industrial (Sociedade 5.0).</p>
+  </div>
+</div>
+
+  
+  <script>
+    // Função throttle para otimizar eventos de mousemove
+    function throttle(func, limit) {
+      let inThrottle;
+      return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+          func.apply(context, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      }
+    }
+    
+    // Efeito de partículas interativo
+    function createParticleNetwork() {
+      const container = document.getElementById('particle-network');
+      for (let i = 0; i < 100; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = '2px';
+        particle.style.height = '2px';
+        particle.style.background = '#00f3ff';
+        particle.style.borderRadius = '50%';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        container.appendChild(particle);
+        animateParticle(particle);
+      }
+    }
+    
+    function animateParticle(element) {
+      let x = parseFloat(element.style.left);
+      let y = parseFloat(element.style.top);
+      let dx = (Math.random() - 0.5) * 0.1;
+      let dy = (Math.random() - 0.5) * 0.1;
+    
+      function update() {
+        x += dx;
+        y += dy;
+        if (x < 0 || x > 100) dx *= -1;
+        if (y < 0 || y > 100) dy *= -1;
+        element.style.left = x + '%';
+        element.style.top = y + '%';
+        requestAnimationFrame(update);
+      }
+      update();
+    }
+    
+    // Abre o modal utilizando transição via scale a partir do centro do link clicado
+    function openModal(modalId, event) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      // Calcula o centro do link clicado
+      const rect = event.currentTarget.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      // Define a origem da transformação para o ponto de clique
+      modal.style.transformOrigin = `${centerX}px ${centerY}px`;
+      modal.style.display = 'block';
+      // Força reflow
+      modal.offsetHeight;
+      // Aplica a classe "open" para animar a escala para 1 e a opacidade para 1
+      modal.classList.add('open');
+    }
+    
+    // Fecha o modal removendo a classe "open"
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('open');
+      modal.addEventListener('transitionend', function handler() {
+        modal.style.display = 'none';
+        modal.removeEventListener('transitionend', handler);
+      });
+    }
+    
+    // Atribui o evento de clique aos links do menu
+    document.querySelectorAll('nav ul.menu li a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalKey = e.currentTarget.dataset.modal;
+        openModal("modal-" + modalKey, e);
+      });
+    });
+    
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticleNetwork();
+    });
+  </script>
+</body>
+</html>
