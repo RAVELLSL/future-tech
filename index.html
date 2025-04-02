@@ -35,8 +35,16 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right, rgba(0,243,255,0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(0,243,255,0.05) 1px, transparent 1px);
+  background-image: linear-gradient(
+    to right,
+    rgba(0,243,255,0.05) 1px,
+    transparent 1px
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(0,243,255,0.05) 1px,
+    transparent 1px
+  );
   background-size: 50px 50px;
   -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
   mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
@@ -118,11 +126,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes ticker-scroll {
-  0% { transform: translateX(100%); }
+  0%   { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 
-/* Destaque da Imagem */
+/* Área principal e imagem de destaque */
 main {
   position: relative;
   z-index: 3;
@@ -134,12 +142,11 @@ main {
   max-width: 90%;
 }
 
-/* Imagem de Destaque - Configuração Base (para desktop) */
+/* Imagem de Destaque - Configuração Base (para telas grandes) */
 .highlight-image {
   width: 100%;
-  /* Em desktops, queremos que a imagem fique bem presente.
-     Removemos limitações rígidas de altura para aproveitar a tela ampla. */
-  max-width: 1200px;
+  max-width: 900px;   /* Limite de largura em desktops grandes */
+  max-height: 55vh;   /* Para não ocupar toda a altura em telas muito altas */
   height: auto;
   animation: float 5s ease-in-out infinite;
   border: 3px solid #00f3ff;
@@ -149,8 +156,8 @@ main {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
 
@@ -183,7 +190,7 @@ nav ul.menu li a:hover {
   color: #ffffff;
 }
 
-/* Estilo dos Modais */
+/* Modais */
 .modal {
   position: fixed;
   top: 0;
@@ -277,37 +284,74 @@ nav ul.menu li a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* RESPONSIVIDADE */
-/* Cada breakpoint foi ajustado independentemente para a imagem */
+/* ============================= */
+/*         RESPONSIVIDADE        */
+/* ============================= */
 
-/* Notebook: telas entre 1024px e 1279px */
-@media (min-width: 1024px) and (max-width: 1279px) {
+/* Telas até 1200px, mas acima de 1024px (notebooks grandes) */
+@media (max-width: 1200px) and (min-width: 1025px) {
   .highlight-image {
-    width: 100%;
-    max-width: 1000px;
-    /* Mantemos a altura automática para preservar a proporção */
-    height: auto;
-  }
-}
-
-/* Tablet: telas entre 768px e 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .highlight-image {
-    width: 100%;
-    max-width: 90%;
-    /* Limita a altura para evitar que a imagem ocupe demais a tela */
+    max-width: 800px;
     max-height: 50vh;
-    height: auto;
   }
 }
 
-/* Smartphone: telas até 767px */
-@media (max-width: 767px) {
+/* Telas até 1024px (tablets / notebooks menores) */
+@media (max-width: 1024px) {
   .highlight-image {
-    width: 100%;
-    max-width: 95%;
+    max-width: 85%;
+    max-height: 50vh;
+  }
+}
+
+/* Telas até 768px (tablets médios/pequenos, smartphones grandes) */
+@media (max-width: 768px) {
+  nav ul.menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ticker-item {
+    margin: 0 1rem;
+    font-size: 1rem;
+  }
+  
+  .highlight-image {
+    max-width: 85%;
     max-height: 40vh;
-    height: auto;
+  }
+  
+  .modal .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+/* Telas até 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+  .glitch-text {
+    font-size: 2rem;
+  }
+  
+  nav ul.menu li a {
+    font-size: 0.9rem;
+  }
+  
+  .ticker-item {
+    font-size: 0.9rem;
+  }
+  
+  .modal {
+    padding: 1rem;
+  }
+  
+  .modal .modal-content {
+    padding: 1rem;
+  }
+  
+  .highlight-image {
+    max-width: 90%;
+    max-height: 35vh;
   }
 }
 
