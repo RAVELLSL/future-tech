@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
- /* Reset Básico */
+/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -134,11 +134,10 @@ main {
   max-width: 90%;
 }
 
-/* Imagem de Destaque - Versão Padrão */
+/* Imagem de Destaque - Versão Padrão (para telas grandes) */
 .highlight-image {
   width: 100%;
-  max-width: 900px;           /* Ajuste para telas grandes */
-  max-height: 55vh;           /* Limita altura na maioria das telas */
+  max-width: 1200px; /* Aumentado para ficar maior em desktops */
   height: auto;
   animation: float 5s ease-in-out infinite;
   border: 3px solid #00f3ff;
@@ -278,15 +277,15 @@ nav ul.menu li a:hover {
 
 /* Responsividade */
 
-/* Ajuste para telas médias (até 1024px) */
+/* Telas até 1024px (tablets grandes, notebooks menores) */
 @media (max-width: 1024px) {
   .highlight-image {
     max-width: 85%;
-    max-height: 50vh; /* Menos altura em telas intermediárias */
+    max-height: 55vh; /* Define um limite de altura para não ocupar a tela inteira */
   }
 }
 
-/* Ajuste para tablets em modo retrato e smartphones grandes (até 768px) */
+/* Telas até 768px (tablets em modo retrato, smartphones grandes) */
 @media (max-width: 768px) {
   nav ul.menu {
     flex-direction: column;
@@ -300,7 +299,7 @@ nav ul.menu li a:hover {
   
   .highlight-image {
     max-width: 85%;
-    max-height: 40vh; /* Reduz ainda mais a altura */
+    max-height: 40vh;
   }
   
   .modal .modal-content {
@@ -309,7 +308,7 @@ nav ul.menu li a:hover {
   }
 }
 
-/* Ajuste para celulares pequenos (até 480px) */
+/* Telas até 480px (smartphones pequenos) */
 @media (max-width: 480px) {
   .glitch-text {
     font-size: 2rem;
@@ -333,7 +332,7 @@ nav ul.menu li a:hover {
   
   .highlight-image {
     max-width: 90%;
-    max-height: 30vh; /* Bem reduzido em celulares pequenos */
+    max-height: 30vh; 
   }
 }
 
